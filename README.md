@@ -5,7 +5,7 @@ This project was created as part of the **Code a Pookalam Contest** organized by
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Video Demonstration](#video-demonstration)
+<!-- - [Video Demonstration](#video-demonstration) -->
 - [Features](#features)
 - [Installation](#installation)
 - [How to Run](#how-to-run)
@@ -17,11 +17,11 @@ This project was created as part of the **Code a Pookalam Contest** organized by
 
 The Pookalam is a key part of the Onam celebrations in Kerala. This project uses Python's Turtle graphics to create a virtual Pookalam with various geometric shapes, colors, and patterns. The design can be customized in terms of colors, shapes, and layout, allowing for creative freedom in replicating traditional Pookalams or experimenting with new designs.
 
-## Video Demonstration
+<!-- ## Video Demonstration
 
 Here is a short video showing the execution of the Pookalam design:
 
-https://github.com/user-attachments/assets/86213395-48b7-4a55-8a3f-94f8d0eaf3e2
+https://github.com/user-attachments/assets/86213395-48b7-4a55-8a3f-94f8d0eaf3e2 -->
 
 ## Features
 

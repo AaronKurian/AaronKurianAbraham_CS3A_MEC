@@ -194,16 +194,60 @@ def trapeziumroof(points, color1, color2):
     s.end_fill()
 
 # Build MEC using rectangles and  trapeziumroof
-# def model():
-#     s = turtle.Turtle()
-#     s.hideturtle()
-#     s.speed(0)
-#     for i in range(3):
-#         rectangle1(15, -20 + i * 10, 30, 10, "#8d6b48", "#e8c9ab")
-#         rectangle2(40, -5 + i * 10, 25, 10, "#8d6b48", "#e8c9ab", angle=15)
-#         rectangle3(-17, -20 + i * 10, 25, 10, "#8d6b48", "#e8c9ab", angle=-15)
-#     points1 = [(-18, 14), (15, 14), (6, 22), (-8, 22)]
-#     trapeziumroof(points1, "#8d6b48", "#e8c9ab")
+def model():
+    s = turtle.Turtle()
+    s.hideturtle()
+    s.speed(0)
+    for i in range(3):
+        rectangle1(15, -20 + i * 10, 30, 10, "#8d6b48", "#e8c9ab")
+        rectangle2(40, -5 + i * 10, 25, 10, "#8d6b48", "#e8c9ab", angle=15)
+        rectangle3(-17, -20 + i * 10, 25, 10, "#8d6b48", "#e8c9ab", angle=-15)
+    points1 = [(-18, 14), (15, 14), (6, 22), (-8, 22)]
+    trapeziumroof(points1, "#8d6b48", "#e8c9ab")
+
+
+def draw_sunflower_petal(turtle, x, y, length=10):
+    turtle.penup()
+    turtle.goto(x, y)
+    turtle.pendown()
+    turtle.color("black")
+    turtle.fillcolor("yellow")
+    turtle.begin_fill()
+    turtle.right(20)
+    turtle.forward(length)
+    turtle.left(40)
+    turtle.forward(length)
+    turtle.left(140)
+    turtle.forward(length)
+    turtle.left(40)
+    turtle.forward(length)
+    turtle.penup()
+    turtle.end_fill()
+
+
+def draw_phyllotactic_sunflower(turtle, total, petalstart, angle=137.508, cspread=1.35):
+    turtle.hideturtle()
+    turtle.speed(0)
+    turtle.shape("circle")
+    turtle.shapesize(0.11)
+    phi = angle * (math.pi / 180.0)
+
+    for n in range(total):
+        r = cspread * math.sqrt(n)
+        theta = n * phi
+        x = r * math.cos(theta)
+        y = r * math.sin(theta)
+
+        turtle.penup()
+        turtle.setpos(x, y)
+        turtle.pendown()
+        turtle.setheading(n * angle)
+        if n > petalstart - 1:
+            draw_sunflower_petal(turtle, x, y)
+        else:
+            turtle.color("#3b1f0a")
+            turtle.fillcolor("#6b3f16")
+            turtle.stamp()
 
 
 ### Calling all the drawing functions ###
@@ -214,7 +258,7 @@ design()
 # Drawing circles and patterns
 circle(385, "#6A040F", "#6A040F")
 circle(370, "#9D0208", "#9D0208")
-# Triangular patterns
+# # Triangular patterns
 triangle(360, "#DC2F02")
 triangle(327, "#E85D04")
 triangle(295, "#FAA307")
@@ -241,6 +285,7 @@ circle_with_colored_divisions(50, 24, colors)
 circle(44, "#004b23", "#004b23")
 colors = ['#25a244', '#2dc653']  # 2 different colors
 circle_with_colored_divisions(40, 12, colors)
+draw_phyllotactic_sunflower(turtle.Turtle(), 88, 64)
 # Building MEC at centre
 # model()
 # Exit on click
