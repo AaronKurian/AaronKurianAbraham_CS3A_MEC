@@ -14,18 +14,18 @@ color("#d00000")
 write("Happy Onam!", font=("Courier", 50, "bold italic"))
 hideturtle()
 
-# Display name and class
-speed(0)
-penup()
-goto(400, -350)
-pendown()
-color("#03071e")
-write("- Aaron Kurian Abraham", font=("Times New Roman", 20))
-penup()
-goto(400, -410)
-pendown()
-write("- CS3A", font=("Times New Roman", 20))
-hideturtle()
+# # Display name and class
+# speed(0)
+# penup()
+# goto(400, -350)
+# pendown()
+# color("#03071e")
+# write("- Aaron Kurian Abraham", font=("Times New Roman", 20))
+# penup()
+# goto(400, -410)
+# pendown()
+# write("- CS3A", font=("Times New Roman", 20))
+# hideturtle()
 
 # Design the line pattern at the top
 def designline():
@@ -36,7 +36,7 @@ def designline():
     s.goto(-1150, 425)
     s.shape("circle")
     s.pendown()
-    for i in range(88):
+    for i in range(45):
         s.color(["#D80A0A", "#B81A19"][i % 2])
         s.stamp()
         s.forward(10)
@@ -194,16 +194,16 @@ def trapeziumroof(points, color1, color2):
     s.end_fill()
 
 # Build MEC using rectangles and  trapeziumroof
-def model():
-    s = turtle.Turtle()
-    s.hideturtle()
-    s.speed(0)
-    for i in range(3):
-        rectangle1(15, -20 + i * 10, 30, 10, "#8d6b48", "#e8c9ab")
-        rectangle2(40, -5 + i * 10, 25, 10, "#8d6b48", "#e8c9ab", angle=15)
-        rectangle3(-17, -20 + i * 10, 25, 10, "#8d6b48", "#e8c9ab", angle=-15)
-    points1 = [(-18, 14), (15, 14), (6, 22), (-8, 22)]
-    trapeziumroof(points1, "#8d6b48", "#e8c9ab")
+# def model():
+#     s = turtle.Turtle()
+#     s.hideturtle()
+#     s.speed(0)
+#     for i in range(3):
+#         rectangle1(15, -20 + i * 10, 30, 10, "#8d6b48", "#e8c9ab")
+#         rectangle2(40, -5 + i * 10, 25, 10, "#8d6b48", "#e8c9ab", angle=15)
+#         rectangle3(-17, -20 + i * 10, 25, 10, "#8d6b48", "#e8c9ab", angle=-15)
+#     points1 = [(-18, 14), (15, 14), (6, 22), (-8, 22)]
+#     trapeziumroof(points1, "#8d6b48", "#e8c9ab")
 
 
 ### Calling all the drawing functions ###
@@ -242,6 +242,6 @@ circle(44, "#004b23", "#004b23")
 colors = ['#25a244', '#2dc653']  # 2 different colors
 circle_with_colored_divisions(40, 12, colors)
 # Building MEC at centre
-model()
+# model()
 # Exit on click
 turtle.Screen().exitonclick()
